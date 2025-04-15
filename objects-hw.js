@@ -127,11 +127,11 @@ function problem5() {
 // 4. This should take user input (prompt) to add the song to songList. 
 // 5. Then add two songs and log the playlist.
 
-let playist = {
+let playlist = {
   name: 'HOT',
   songList: ['Born Fire', 'HOT', 'Come Over'],
-  addSong: function (song1,song2) {
-    this.songList.push(song1,song2)
+  addSong: function (song1) {
+    this.songList.push(song1)
   }
 }
 
@@ -139,7 +139,7 @@ let playist = {
 function problem6() {
   // Use a for loop that iterates 2 times to ask for two songs.
   // No need to touch the for loop except uncommenting and replacing the PLACEHOLDER.
-  for (i=2; i<2; i++) {
+  for (i=0; i<2; i++) {
     const song = prompt(`Enter song ${i + 1}:`);
     if (song && song.trim() !== "") {
       playlist.addSong(song.trim());
@@ -149,7 +149,7 @@ function problem6() {
 
   // This will output to the page for you:
   // Just fill in the PLACEHOLDERs with the correct info.
-  let result = `<strong>Playlist: PLACEHOLDER </strong><ul>`;
+  let result = `<strong>Playlist: ${playlist.name} </strong><ul>`;
   for (let song of playlist.songList) {
     result += `<li>${song}</li>`;
   }
